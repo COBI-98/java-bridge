@@ -6,6 +6,7 @@ package bridge;
 public class OutputView {
     public void printStart(){
         System.out.println("다리 건너기 게임을 시작합니다.");
+        System.out.println(" ");
         System.out.println("다리의 길이를 입력해주세요.");
     }
     public void printChooseMove(){
@@ -18,8 +19,14 @@ public class OutputView {
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public void printMap(Maps maps) {
-        System.out.println(maps.topMap + " ]");
-        System.out.println(maps.downMap + " ]");
+//        System.out.println(maps.topMap + " ]");
+//        System.out.println(maps.downMap + " ]");
+        System.out.print("[ ");
+        maps.topMap.forEach(System.out::print);
+        System.out.println(" ]");
+        System.out.print("[ ");
+        maps.downMap.forEach(System.out::print);
+        System.out.println(" ]");
     }
 
     public void printRetry(){
@@ -32,6 +39,7 @@ public class OutputView {
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public void printResult(Maps maps, String result, int count) {
+        System.out.println(" ");
         System.out.println("최종 게임 결과");
         printMap(maps);
         System.out.println(" ");
