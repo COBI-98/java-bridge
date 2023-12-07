@@ -10,6 +10,7 @@ public class Controller {
 	OutputView outputView;
 	int bridgeSize;
 	List<String> bridge;
+	int tryGameCount;
 
 	public Controller(){
 		randomNumber = new BridgeRandomNumberGenerator();
@@ -17,8 +18,10 @@ public class Controller {
 		game = new BridgeGame();
 		inputView = new InputView();
 		outputView = new OutputView();
+
 	}
 	public void startGame(){
+		tryGameCount = 1;
 		outputView.printStart();
 		setBridgeSize();
 	}
@@ -40,9 +43,10 @@ public class Controller {
 				String retryResult = inputView.readGameCommand();
 				if (retryResult.equals("Q")) break;
 				game = new BridgeGame();
+				tryGameCount++;
 			}
 			if (game.isEndGame(bridge) == 2){
-				outputView.printResult(game.maps, "성공", game.count);
+				outputView.printResult(game.maps, "성공", tryGameCount);
 				break;
 			}
 		}

@@ -44,7 +44,7 @@ public class OutputView {
         printMap(maps);
         System.out.println(" ");
         System.out.println("게임 성공 여부: " + result);
-        System.out.println("총 시도한 횟수 : " +  count);
+        System.out.println("총 시도한 횟수: " +  count);
     }
 
 

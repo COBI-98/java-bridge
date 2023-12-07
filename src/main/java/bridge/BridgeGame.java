@@ -11,6 +11,7 @@ public class BridgeGame {
     String successStatus;
     public BridgeGame(){
         maps = new Maps();
+        count = 0;
         successStatus = "O";
     }
     /**
