@@ -26,7 +26,13 @@ public class Controller {
 		setBridgeSize();
 	}
 	public void setBridgeSize(){
-		bridgeSize = inputView.readBridgeSize();
+		try{
+			bridgeSize = inputView.readBridgeSize();
+		}catch (IllegalArgumentException e){
+			System.out.println(e.getMessage());
+			bridgeSize = inputView.readBridgeSize();
+		}
+
 	}
 	public void makeBridge(){
 		bridge = maker.makeBridge(bridgeSize);
